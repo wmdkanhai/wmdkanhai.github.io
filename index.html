@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://wmding.com/index.html">
 <meta property="og:site_name" content="wmd的奋斗生活">
 <meta property="og:description" content="学习总结 思考感悟">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wmd的奋斗生活">
 <meta name="twitter:description" content="学习总结 思考感悟">
@@ -531,6 +532,90 @@
 
 
   
+    <article id="post-侧滑控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/侧滑控件/">侧滑控件</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
+  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DrawerLayout</p>
+<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
+<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
+<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
+<hr>
+<p>给侧滑页面添加内容 NavigationView</p>
+<p>NavigationView 的使用</p>
+<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
+<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
+<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
+<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
+<hr>
+<p>添加 ToolBar</p>
+<p>1、添加</p>
+<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
+</code></pre><p>2、和侧滑栏进行关联</p>
+<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
+
+drawerToggle.syncState();
+
+mDrawerLayout.addDrawerListener(drawerToggle);
+</code></pre><hr>
+<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/16/侧滑控件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -619,90 +704,6 @@ RotateAnimation
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/16/动画/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-侧滑控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/侧滑控件/">侧滑控件</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>DrawerLayout</p>
-<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
-<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
-<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
-<hr>
-<p>给侧滑页面添加内容 NavigationView</p>
-<p>NavigationView 的使用</p>
-<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
-<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
-<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
-<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
-<hr>
-<p>添加 ToolBar</p>
-<p>1、添加</p>
-<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
-</code></pre><p>2、和侧滑栏进行关联</p>
-<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-
-drawerToggle.syncState();
-
-mDrawerLayout.addDrawerListener(drawerToggle);
-</code></pre><hr>
-<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/侧滑控件/">展开全文 >></a>
         </p>
       
 
@@ -936,7 +937,7 @@ print(fun(2,20))###40
 <li>@Resource 默认按照名称装配注入，当不存在名称匹配的 Bean 时会按照类型注入。</li>
 <li>@Autowired 默认按照类型装配注入，如果需要名称注入需要使用 @Qualifier 来指定名称。</li>
 </ul>
-<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.limisky.com/123.html" title="Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别" target="_blank" rel="external">Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别</a></p>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.limisky.com/123.html" title="Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别" target="_blank" rel="noopener">Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别</a></p>
 <hr>
 <h3 id="新引入的注解"><a href="#新引入的注解" class="headerlink" title="新引入的注解"></a>新引入的注解</h3>
       
@@ -1234,11 +1235,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">

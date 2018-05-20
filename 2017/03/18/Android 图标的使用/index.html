@@ -8,20 +8,14 @@
   <link rel="dns-prefetch" href="http://wmding.com">
   <title>Android 图标的使用 | wmd的奋斗生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。
-一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG
-
-VectorDrawable
-AnimatedVectorDrawable">
+  <meta name="description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。 一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG  VectorDrawable AnimatedVectorDrawable">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 图标的使用">
 <meta property="og:url" content="http://wmding.com/2017/03/18/Android 图标的使用/index.html">
 <meta property="og:site_name" content="wmd的奋斗生活">
-<meta property="og:description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。
-一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG
-
-VectorDrawable
-AnimatedVectorDrawable">
+<meta property="og:description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。 一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG  VectorDrawable AnimatedVectorDrawable">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://i.imgur.com/53UnG2C.png">
 <meta property="og:image" content="http://i.imgur.com/cAJYSND.jpg">
 <meta property="og:image" content="http://i.imgur.com/luzsIXk.jpg">
@@ -33,11 +27,7 @@ AnimatedVectorDrawable">
 <meta property="og:updated_time" content="2017-05-16T16:04:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 图标的使用">
-<meta name="twitter:description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。
-一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG
-
-VectorDrawable
-AnimatedVectorDrawable">
+<meta name="twitter:description" content="在 Android 中我们使用的图标一般是 .png 。当然也有其他是设置方法。 一、在 Android 中使用 SVG 矢量图Android 5.X 中提供了两个新的 API 来帮助支持 SVG  VectorDrawable AnimatedVectorDrawable">
 <meta name="twitter:image" content="http://i.imgur.com/53UnG2C.png">
   
     <link rel="alternative" href="/atom.xml" title="wmd的奋斗生活" type="application/atom+xml">
@@ -234,7 +224,7 @@ AnimatedVectorDrawable">
 <h5 id="4、使用"><a href="#4、使用" class="headerlink" title="4、使用"></a>4、使用</h5><p>在布局文件中使用同 .png 图片一样，引入即可使用。</p>
 <hr>
 <h2 id="二、在-Android-中使用-iconfont-图标"><a href="#二、在-Android-中使用-iconfont-图标" class="headerlink" title="二、在 Android 中使用 iconfont 图标"></a>二、在 Android 中使用 iconfont 图标</h2><p>阿里巴巴矢量图标库给开发人员带来了很大的福利，程序猿再也不用担心美工不给作图了。</p>
-<p>地址： <a href="http://www.iconfont.cn/plus" target="_blank" rel="external">http://www.iconfont.cn/plus</a></p>
+<p>地址： <a href="http://www.iconfont.cn/plus" target="_blank" rel="noopener">http://www.iconfont.cn/plus</a></p>
 <h3 id="1、简单使用，下载"><a href="#1、简单使用，下载" class="headerlink" title="1、简单使用，下载"></a>1、简单使用，下载</h3><p><img src="http://i.imgur.com/pouQOnU.jpg" alt=""></p>
 <p>点击下载，进入下载页面进行下载，可以根据需要设置颜色和下载不同的格式（SVG 、AI 、PNG）。</p>
 <h3 id="2、高级用法"><a href="#2、高级用法" class="headerlink" title="2、高级用法"></a>2、高级用法</h3><ol>
@@ -243,7 +233,7 @@ AnimatedVectorDrawable">
 <li><p>打开下载后的文件，并打开 demoXxx.html 文件，找到图标对应的 HTML 实体字符码<br><img src="http://i.imgur.com/axtkl3e.jpg" alt=""><br><img src="http://i.imgur.com/Vm93w5b.jpg" alt=""></p>
 </li>
 </ol>
-<ol>
+<ol start="3">
 <li><p>打开项目中 res/values/strings.xml 文件，添加 string 值<img src="http://i.imgur.com/UMgB8td.jpg" alt=""></p>
 </li>
 <li><p>在布局文件中引入，添加 string 值到 TextView</p>
@@ -268,7 +258,7 @@ textView2.setTypeface(typeface);
 <p>做完这几部就 OK 了。就可以优雅的使用 iconfont 图标了。</p>
 <hr>
 <h2 id="三、站在巨人的肩膀上"><a href="#三、站在巨人的肩膀上" class="headerlink" title="三、站在巨人的肩膀上"></a>三、站在巨人的肩膀上</h2><p>不要重复造轮子，有牛人写了库，我们就直接拿来用就好了。</p>
-<p>地址： <a href="https://github.com/mikepenz/Android-Iconics" target="_blank" rel="external">https://github.com/mikepenz/Android-Iconics</a></p>
+<p>地址： <a href="https://github.com/mikepenz/Android-Iconics" target="_blank" rel="noopener">https://github.com/mikepenz/Android-Iconics</a></p>
 
       
 
@@ -513,11 +503,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">

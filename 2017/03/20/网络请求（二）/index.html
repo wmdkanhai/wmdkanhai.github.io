@@ -8,24 +8,20 @@
   <link rel="dns-prefetch" href="http://wmding.com">
   <title>网络请求（二） | wmd的奋斗生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。
-本文的学习记录参考 简书上的一篇文章 
-地址： http://www.jianshu.com/p/19ea72fba61a">
+  <meta name="description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。 本文的学习记录参考 简书上的一篇文章  地址： http://www.jianshu.com/p/19ea72fba61a">
+<meta name="keywords" content="Android retrofit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络请求（二）">
 <meta property="og:url" content="http://wmding.com/2017/03/20/网络请求（二）/index.html">
 <meta property="og:site_name" content="wmd的奋斗生活">
-<meta property="og:description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。
-本文的学习记录参考 简书上的一篇文章 
-地址： http://www.jianshu.com/p/19ea72fba61a">
+<meta property="og:description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。 本文的学习记录参考 简书上的一篇文章  地址： http://www.jianshu.com/p/19ea72fba61a">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://i.imgur.com/O5cDe3S.jpg">
 <meta property="og:image" content="http://i.imgur.com/rsO1QbK.jpg">
 <meta property="og:updated_time" content="2017-05-16T16:05:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络请求（二）">
-<meta name="twitter:description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。
-本文的学习记录参考 简书上的一篇文章 
-地址： http://www.jianshu.com/p/19ea72fba61a">
+<meta name="twitter:description" content="retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。 本文的学习记录参考 简书上的一篇文章  地址： http://www.jianshu.com/p/19ea72fba61a">
 <meta name="twitter:image" content="http://i.imgur.com/O5cDe3S.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wmd的奋斗生活" type="application/atom+xml">
@@ -203,20 +199,20 @@
       
         <p>retrofit 已经早就听说了，一直没有学习，为了使自己成为一个有理想、有抱负的程序猿，我决定学习下。</p>
 <p>本文的学习记录参考 简书上的一篇文章 </p>
-<p>地址： <a href="http://www.jianshu.com/p/19ea72fba61a" target="_blank" rel="external">http://www.jianshu.com/p/19ea72fba61a</a></p>
+<p>地址： <a href="http://www.jianshu.com/p/19ea72fba61a" target="_blank" rel="noopener">http://www.jianshu.com/p/19ea72fba61a</a></p>
 <a id="more"></a>
 <h3 id="1、初识"><a href="#1、初识" class="headerlink" title="1、初识"></a>1、初识</h3><p>Retrofit </p>
 <p>是一个基于 OKHttp 的 Restful API　请求工具。将网络请求变成方法的调用，使用起来非常简洁方便。</p>
-<p>官方介绍： <a href="http://square.github.io/retrofit/" target="_blank" rel="external">http://square.github.io/retrofit/</a> </p>
+<p>官方介绍： <a href="http://square.github.io/retrofit/" target="_blank" rel="noopener">http://square.github.io/retrofit/</a> </p>
 <p><img src="http://i.imgur.com/O5cDe3S.jpg" alt=""></p>
 <ol>
 <li>Retrofit 会将你的 HTTP API 转换为 Java 中 interface 的形式。</li>
 </ol>
-<ol>
+<ol start="2">
 <li>通过 new Retrofit.Buidler()….build() 进行 Retrofit 的构建，即使用的是 Builder 模式。</li>
 </ol>
 <pre><code>&gt; Builder模式用于将一个复杂的对象的构建和它的表示分离，使得同样的构建过程可以创建不同的表示。这里Retrofit使用Builder模式支持了支持不同的转换（就是将HTTP返回的数据解析成Java对象，主要有Xml、Gson等）和返回（主要作用就是将Call对象转换成另一个对象，比如RxJava）。这里也就真正的达到了构建复杂对象和它的部件进行解耦。
-</code></pre><ol>
+</code></pre><ol start="3">
 <li>使用 create() 方法创建网络请求接口类 GitHubService 的实例，然后在使用该实例的 listRepos() 方法获取到数据。</li>
 </ol>
 <h3 id="2、简单使用"><a href="#2、简单使用" class="headerlink" title="2、简单使用"></a>2、简单使用</h3><h4 id="1、添加网络权限、添加依赖"><a href="#1、添加网络权限、添加依赖" class="headerlink" title="1、添加网络权限、添加依赖"></a>1、添加网络权限、添加依赖</h4><pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
@@ -224,7 +220,7 @@
 <pre><code>compile &apos;com.squareup.retrofit2:retrofit:2.2.0&apos;
 //如果用到gson解析 需要添加下面的依赖
 compile &apos;com.squareup.retrofit2:converter-gson:2.2.0&apos;
-</code></pre><h4 id="2、创建返回数据的实体类-ResponseBean"><a href="#2、创建返回数据的实体类-ResponseBean" class="headerlink" title="2、创建返回数据的实体类 ResponseBean"></a>2、创建返回数据的实体类 ResponseBean</h4><p>这里的数据是获取微信精选分类，接口是： <a href="http://apicloud.mob.com/wx/article/category/query?key=1228b5a794dc8" target="_blank" rel="external">http://apicloud.mob.com/wx/article/category/query?key=1228b5a794dc8</a></p>
+</code></pre><h4 id="2、创建返回数据的实体类-ResponseBean"><a href="#2、创建返回数据的实体类-ResponseBean" class="headerlink" title="2、创建返回数据的实体类 ResponseBean"></a>2、创建返回数据的实体类 ResponseBean</h4><p>这里的数据是获取微信精选分类，接口是： <a href="http://apicloud.mob.com/wx/article/category/query?key=1228b5a794dc8" target="_blank" rel="noopener">http://apicloud.mob.com/wx/article/category/query?key=1228b5a794dc8</a></p>
 <p>数据结构如下：</p>
 <p><img src="http://i.imgur.com/rsO1QbK.jpg" alt=""></p>
 <p>这里创建实体类的时候直接使用 Android studio 的插件 <code>GsonFormat</code>。</p>
@@ -618,11 +614,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
