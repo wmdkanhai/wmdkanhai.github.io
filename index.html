@@ -147,19 +147,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-书单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-侧滑控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/书单/">书单</a>
+      <a class="article-title" href="/2018/05/16/侧滑控件/">侧滑控件</a>
     </h1>
   
 
         
-        <a href="/2018/05/16/书单/" class="archive-article-date">
+        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
   	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
@@ -170,25 +170,29 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、大型网站技术架构：核心原理与案例分析</p>
-<p>2、分布式服务框架原理与实践</p>
-<p>3、互联网创业核心技术：构建可伸缩的web应用</p>
-<p>4、高扩展性网站的50条原则</p>
-<p>5、Java性能优化权威指南</p>
-<p>6、架构探险：从零开始写Java Web框架</p>
-<p>7、架构探险：从零开始写分布式服务框架</p>
-<p>8、软件架构师的12项修炼</p>
+        <p>DrawerLayout</p>
+<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
+<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
+<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
 <hr>
-<p>Java</p>
-<ul>
-<li>《深入浅出 Java》</li>
-<li>《Think in Java （Java 编程思想）》</li>
-<li>《第一行代码（第二版）》</li>
-<li>《Android 群英传》</li>
-<li>《Android 开发艺术探索》</li>
-<li>《Android 设计模式源码分析》</li>
-<li>《Android 开发精要》</li>
-</ul>
+<p>给侧滑页面添加内容 NavigationView</p>
+<p>NavigationView 的使用</p>
+<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
+<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
+<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
+<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
+<hr>
+<p>添加 ToolBar</p>
+<p>1、添加</p>
+<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
+</code></pre><p>2、和侧滑栏进行关联</p>
+<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
+
+drawerToggle.syncState();
+
+mDrawerLayout.addDrawerListener(drawerToggle);
+</code></pre><hr>
+<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
 
       
 
@@ -202,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -212,7 +216,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/书单/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/16/侧滑控件/">展开全文 >></a>
         </p>
       
 
@@ -227,19 +231,19 @@
 
 
   
-    <article id="post-111" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/111/">111</a>
+      <a class="article-title" href="/2018/05/16/动画/">动画</a>
     </h1>
   
 
         
-        <a href="/2018/05/16/111/" class="archive-article-date">
+        <a href="/2018/05/16/动画/" class="archive-article-date">
   	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
@@ -250,7 +254,48 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>View 动画、帧动画、属性动画</p>
+<p>View 动画通过对场景里的对象不断的做图像变换(平移，缩放，旋转，透明度)而产生的动画效果，是一种渐进式动画，支持自定义</p>
+<p>帧动画是通过顺序播放一系列图像从而产生动画效果，即图片切换动画。</p>
+<p>属性动画就是通过动态地改变对象的属性从而达到动画效果</p>
+<hr>
+<h3 id="1、View-动画"><a href="#1、View-动画" class="headerlink" title="1、View 动画"></a>1、View 动画</h3><h4 id="1、View-动画的种类"><a href="#1、View-动画的种类" class="headerlink" title="1、View 动画的种类"></a>1、View 动画的种类</h4><p>View 动画支持四种动画效果：平移、缩放、旋转、透明度。对应着 Animation 的四个子类 TranslateAnimation、ScaleAnimation、RotateAnimation、AlphaAnimation</p>
+<p>这四种动画既可以通过 XML 来定义，也可以通过代码来定义，建议采用 XML 来定义。</p>
+<p><img src="http://i.imgur.com/zS4Xc7t.jpg" alt=""></p>
+<p>实现方式：</p>
+<p>1、配置文件</p>
+<pre><code>/res/anim
+
+alpha
+
+scale
+
+translate
+
+rotate
+</code></pre><p>2、Java 代码实现</p>
+<pre><code>AlphaAnitmation
+
+ScaleAnimation
+
+TranslateAnimation
+
+RotateAnimation
+</code></pre><p>eg:</p>
+<pre><code>Animation alpha = new AlphaAnimation()
+</code></pre><p>传统动画(Animation)是系统不断调用onDraw方法重绘界面以实现动画效果，不适合做交互动画效果，只适用于做显示动画；</p>
+<p>而属性动画(Animator)则是操作一个get、set方法去真实的改变一个属性。</p>
+<h4 id="2、自定义-View-动画"><a href="#2、自定义-View-动画" class="headerlink" title="2、自定义 View 动画"></a>2、自定义 View 动画</h4><p>继承 Animation 这个抽象类，重写它的 initialize 和 applyTransformation 方法，在 initialize 方法中做一些初始化工作，然后在 applyTransformation 中进行相应的矩阵变化即可。</p>
+<h4 id="3、帧动画"><a href="#3、帧动画" class="headerlink" title="3、帧动画"></a>3、帧动画</h4><p>顺序播放一组预先定义好的图片，类似于电影播放</p>
+<hr>
+<h3 id="2、View-动画的特殊使用场景"><a href="#2、View-动画的特殊使用场景" class="headerlink" title="2、View 动画的特殊使用场景"></a>2、View 动画的特殊使用场景</h3><p>View 动画还可以在一些特殊场景下使用，比如在 ViewGroup 中可以控制子元素的出场效果，在 Activity 中可以实现不同 Activity 之间的切换效果。</p>
+<h4 id="1、LayoutAnimation"><a href="#1、LayoutAnimation" class="headerlink" title="1、LayoutAnimation"></a>1、LayoutAnimation</h4><p>作用于 ViewGroup，为 ViewGroup 指定一个动画，这样当它的子元素出场时都会具有这样动画效果， 这种效果常常被用在 ListView 上，我们时常会看到一种特殊的 ListView ，它的每个 Item 都以一定的动画的形式出现，它使用的就是 LayoutAnimation </p>
+<p>1、定义 LayoutAnimation </p>
+<p>2、为子元素指定具体的入场动画</p>
+<p>3、为 ViewGroup 指定 android：layoutAnimation 属性</p>
+<h4 id="2、Activity-的切换效果"><a href="#2、Activity-的切换效果" class="headerlink" title="2、Activity 的切换效果"></a>2、Activity 的切换效果</h4><hr>
+<h3 id="1、属性动画"><a href="#1、属性动画" class="headerlink" title="1、属性动画"></a>1、属性动画</h3><p>属性动画中最简单最常用的就是ObjectAnimator</p>
+
       
 
       
@@ -258,11 +303,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/111/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/16/动画/">展开全文 >></a>
         </p>
       
 
@@ -532,19 +588,19 @@
 
 
   
-    <article id="post-侧滑控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-书单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/侧滑控件/">侧滑控件</a>
+      <a class="article-title" href="/2018/05/16/书单/">书单</a>
     </h1>
   
 
         
-        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
+        <a href="/2018/05/16/书单/" class="archive-article-date">
   	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
@@ -555,29 +611,25 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DrawerLayout</p>
-<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
-<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
-<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
+        <p>1、大型网站技术架构：核心原理与案例分析</p>
+<p>2、分布式服务框架原理与实践</p>
+<p>3、互联网创业核心技术：构建可伸缩的web应用</p>
+<p>4、高扩展性网站的50条原则</p>
+<p>5、Java性能优化权威指南</p>
+<p>6、架构探险：从零开始写Java Web框架</p>
+<p>7、架构探险：从零开始写分布式服务框架</p>
+<p>8、软件架构师的12项修炼</p>
 <hr>
-<p>给侧滑页面添加内容 NavigationView</p>
-<p>NavigationView 的使用</p>
-<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
-<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
-<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
-<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
-<hr>
-<p>添加 ToolBar</p>
-<p>1、添加</p>
-<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
-</code></pre><p>2、和侧滑栏进行关联</p>
-<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-
-drawerToggle.syncState();
-
-mDrawerLayout.addDrawerListener(drawerToggle);
-</code></pre><hr>
-<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
+<p>Java</p>
+<ul>
+<li>《深入浅出 Java》</li>
+<li>《Think in Java （Java 编程思想）》</li>
+<li>《第一行代码（第二版）》</li>
+<li>《Android 群英传》</li>
+<li>《Android 开发艺术探索》</li>
+<li>《Android 设计模式源码分析》</li>
+<li>《Android 开发精要》</li>
+</ul>
 
       
 
@@ -591,7 +643,7 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
         		</li>
       		
 		</ul>
@@ -601,7 +653,7 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/侧滑控件/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/16/书单/">展开全文 >></a>
         </p>
       
 
@@ -616,19 +668,19 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 
 
   
-    <article id="post-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Spring常用注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/动画/">动画</a>
+      <a class="article-title" href="/2018/05/16/Spring常用注解/">Spring 注解</a>
     </h1>
   
 
         
-        <a href="/2018/05/16/动画/" class="archive-article-date">
+        <a href="/2018/05/16/Spring常用注解/" class="archive-article-date">
   	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
 </a>
         
@@ -639,48 +691,30 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>View 动画、帧动画、属性动画</p>
-<p>View 动画通过对场景里的对象不断的做图像变换(平移，缩放，旋转，透明度)而产生的动画效果，是一种渐进式动画，支持自定义</p>
-<p>帧动画是通过顺序播放一系列图像从而产生动画效果，即图片切换动画。</p>
-<p>属性动画就是通过动态地改变对象的属性从而达到动画效果</p>
+        <h3 id="常用-Spring-注解"><a href="#常用-Spring-注解" class="headerlink" title="常用 Spring 注解"></a>常用 Spring 注解</h3><p>@Component、@Repository、@Service、@Controller、@Resource、@Autowired、@Qualifier 这些都是项目上常用的注解，这些注解的使用大大简化 xml 文件的配置。</p>
+<p>这些注解应该如何使用呢？</p>
+<ul>
+<li>@Component、@Repository、@Service、@Controller 注解都用于 Bean 的注册.</li>
+<li>@Resource、@Autowired、@Qualifier 注解用于 Bean 的注入。</li>
+</ul>
+<h4 id="1、用于-Bean-注册的注解"><a href="#1、用于-Bean-注册的注解" class="headerlink" title="1、用于 Bean 注册的注解"></a>1、用于 Bean 注册的注解</h4><p>@Component、@Repository（最早引入的）、@Service、@Controller  ，这几个注解都可用于 Bean 的注册，并且作用完全相同，区别仅仅是语义上的区别，分别用在 web 应用的不同层次上：</p>
+<ul>
+<li>@Repository 用于数据库访问</li>
+<li>@Service 用于业务逻辑层 Bean 的注册</li>
+<li>@Controller 用于控制层 Bean 的注册</li>
+<li>@Component 用于无法明确归类的 Bean 的注册</li>
+</ul>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>在使用这些注解的同时，需要在 xml 文件中进行配置，指定扫描的内容</p>
+<pre><code>&lt;context:component-scan base-package=&quot;com.diit.common.data&quot;  &gt;&lt;/context:component-scan&gt;
+</code></pre><p>这样只有 base-package 下的带有注解的类会被注册到 Spring 的容器管理。</p>
+<h3 id="Bean-注入"><a href="#Bean-注入" class="headerlink" title="Bean 注入"></a>Bean 注入</h3><p>@Resource、@Autowired、@Qualifier 这几个注解用于 Bean 注入，它们的区别是：</p>
+<ul>
+<li>@Resource 默认按照名称装配注入，当不存在名称匹配的 Bean 时会按照类型注入。</li>
+<li>@Autowired 默认按照类型装配注入，如果需要名称注入需要使用 @Qualifier 来指定名称。</li>
+</ul>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.limisky.com/123.html" title="Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别" target="_blank" rel="noopener">Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别</a></p>
 <hr>
-<h3 id="1、View-动画"><a href="#1、View-动画" class="headerlink" title="1、View 动画"></a>1、View 动画</h3><h4 id="1、View-动画的种类"><a href="#1、View-动画的种类" class="headerlink" title="1、View 动画的种类"></a>1、View 动画的种类</h4><p>View 动画支持四种动画效果：平移、缩放、旋转、透明度。对应着 Animation 的四个子类 TranslateAnimation、ScaleAnimation、RotateAnimation、AlphaAnimation</p>
-<p>这四种动画既可以通过 XML 来定义，也可以通过代码来定义，建议采用 XML 来定义。</p>
-<p><img src="http://i.imgur.com/zS4Xc7t.jpg" alt=""></p>
-<p>实现方式：</p>
-<p>1、配置文件</p>
-<pre><code>/res/anim
-
-alpha
-
-scale
-
-translate
-
-rotate
-</code></pre><p>2、Java 代码实现</p>
-<pre><code>AlphaAnitmation
-
-ScaleAnimation
-
-TranslateAnimation
-
-RotateAnimation
-</code></pre><p>eg:</p>
-<pre><code>Animation alpha = new AlphaAnimation()
-</code></pre><p>传统动画(Animation)是系统不断调用onDraw方法重绘界面以实现动画效果，不适合做交互动画效果，只适用于做显示动画；</p>
-<p>而属性动画(Animator)则是操作一个get、set方法去真实的改变一个属性。</p>
-<h4 id="2、自定义-View-动画"><a href="#2、自定义-View-动画" class="headerlink" title="2、自定义 View 动画"></a>2、自定义 View 动画</h4><p>继承 Animation 这个抽象类，重写它的 initialize 和 applyTransformation 方法，在 initialize 方法中做一些初始化工作，然后在 applyTransformation 中进行相应的矩阵变化即可。</p>
-<h4 id="3、帧动画"><a href="#3、帧动画" class="headerlink" title="3、帧动画"></a>3、帧动画</h4><p>顺序播放一组预先定义好的图片，类似于电影播放</p>
-<hr>
-<h3 id="2、View-动画的特殊使用场景"><a href="#2、View-动画的特殊使用场景" class="headerlink" title="2、View 动画的特殊使用场景"></a>2、View 动画的特殊使用场景</h3><p>View 动画还可以在一些特殊场景下使用，比如在 ViewGroup 中可以控制子元素的出场效果，在 Activity 中可以实现不同 Activity 之间的切换效果。</p>
-<h4 id="1、LayoutAnimation"><a href="#1、LayoutAnimation" class="headerlink" title="1、LayoutAnimation"></a>1、LayoutAnimation</h4><p>作用于 ViewGroup，为 ViewGroup 指定一个动画，这样当它的子元素出场时都会具有这样动画效果， 这种效果常常被用在 ListView 上，我们时常会看到一种特殊的 ListView ，它的每个 Item 都以一定的动画的形式出现，它使用的就是 LayoutAnimation </p>
-<p>1、定义 LayoutAnimation </p>
-<p>2、为子元素指定具体的入场动画</p>
-<p>3、为 ViewGroup 指定 android：layoutAnimation 属性</p>
-<h4 id="2、Activity-的切换效果"><a href="#2、Activity-的切换效果" class="headerlink" title="2、Activity 的切换效果"></a>2、Activity 的切换效果</h4><hr>
-<h3 id="1、属性动画"><a href="#1、属性动画" class="headerlink" title="1、属性动画"></a>1、属性动画</h3><p>属性动画中最简单最常用的就是ObjectAnimator</p>
-
+<h3 id="新引入的注解"><a href="#新引入的注解" class="headerlink" title="新引入的注解"></a>新引入的注解</h3>
       
 
       
@@ -693,7 +727,7 @@ RotateAnimation
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -703,7 +737,7 @@ RotateAnimation
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/动画/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/16/Spring常用注解/">展开全文 >></a>
         </p>
       
 
@@ -893,90 +927,6 @@ print(fun(2,20))###40
 
 
   
-    <article id="post-Spring常用注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/Spring常用注解/">Spring 注解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/Spring常用注解/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常用-Spring-注解"><a href="#常用-Spring-注解" class="headerlink" title="常用 Spring 注解"></a>常用 Spring 注解</h3><p>@Component、@Repository、@Service、@Controller、@Resource、@Autowired、@Qualifier 这些都是项目上常用的注解，这些注解的使用大大简化 xml 文件的配置。</p>
-<p>这些注解应该如何使用呢？</p>
-<ul>
-<li>@Component、@Repository、@Service、@Controller 注解都用于 Bean 的注册.</li>
-<li>@Resource、@Autowired、@Qualifier 注解用于 Bean 的注入。</li>
-</ul>
-<h4 id="1、用于-Bean-注册的注解"><a href="#1、用于-Bean-注册的注解" class="headerlink" title="1、用于 Bean 注册的注解"></a>1、用于 Bean 注册的注解</h4><p>@Component、@Repository（最早引入的）、@Service、@Controller  ，这几个注解都可用于 Bean 的注册，并且作用完全相同，区别仅仅是语义上的区别，分别用在 web 应用的不同层次上：</p>
-<ul>
-<li>@Repository 用于数据库访问</li>
-<li>@Service 用于业务逻辑层 Bean 的注册</li>
-<li>@Controller 用于控制层 Bean 的注册</li>
-<li>@Component 用于无法明确归类的 Bean 的注册</li>
-</ul>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>在使用这些注解的同时，需要在 xml 文件中进行配置，指定扫描的内容</p>
-<pre><code>&lt;context:component-scan base-package=&quot;com.diit.common.data&quot;  &gt;&lt;/context:component-scan&gt;
-</code></pre><p>这样只有 base-package 下的带有注解的类会被注册到 Spring 的容器管理。</p>
-<h3 id="Bean-注入"><a href="#Bean-注入" class="headerlink" title="Bean 注入"></a>Bean 注入</h3><p>@Resource、@Autowired、@Qualifier 这几个注解用于 Bean 注入，它们的区别是：</p>
-<ul>
-<li>@Resource 默认按照名称装配注入，当不存在名称匹配的 Bean 时会按照类型注入。</li>
-<li>@Autowired 默认按照类型装配注入，如果需要名称注入需要使用 @Qualifier 来指定名称。</li>
-</ul>
-<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a href="http://www.limisky.com/123.html" title="Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别" target="_blank" rel="noopener">Spring注解 @Component @Repository @ Service @Controller 以及 @Resource @Autowired @Qualifier 注入的区别</a></p>
-<hr>
-<h3 id="新引入的注解"><a href="#新引入的注解" class="headerlink" title="新引入的注解"></a>新引入的注解</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/Spring常用注解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-设计模式之单例模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1123,6 +1073,65 @@ print(fun(2,20))###40
 
 
   
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/17/hello-world/" class="archive-article-date">
+  	<time datetime="2017-05-16T16:04:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一个小白，倒腾了一天，Hello World终于出来了。不错，加油。</p>
+<h2 id="记录点滴"><a href="#记录点滴" class="headerlink" title="记录点滴"></a>记录点滴</h2><p>博客终于搭建好了，开始我的记录，做一个有为程序员，所以要谨记下面的话：</p>
+<ul>
+<li>越努力就越幸运</li>
+<li>想的多不如做的多</li>
+<li>现在不努力以后拿什么娶媳妇</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/05/17/hello-world/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/17/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1219,11 +1228,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1235,11 +1244,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
