@@ -147,70 +147,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Spring常用注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/Spring常用注解/">Spring 注解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/Spring常用注解/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常用-Spring-注解"><a href="#常用-Spring-注解" class="headerlink" title="常用 Spring 注解"></a>常用 Spring 注解</h3><p>@Component、@Repository、@Service、@Controller、@Resource、@Autowired、@Qualifier 这些都是项目上常用的注解，这些注解的使用大大简化 xml 文件的配置。</p>
-        
-          <a class="article-more-a" href="/2018/05/16/Spring常用注解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/Spring常用注解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-侧滑控件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -237,27 +173,9 @@
         <p>DrawerLayout</p>
 <p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
 <p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
-<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
-<hr>
-<p>给侧滑页面添加内容 NavigationView</p>
-<p>NavigationView 的使用</p>
-<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
-<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
-<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
-<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
-<hr>
-<p>添加 ToolBar</p>
-<p>1、添加</p>
-<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
-</code></pre><p>2、和侧滑栏进行关联</p>
-<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-
-drawerToggle.syncState();
-
-mDrawerLayout.addDrawerListener(drawerToggle);
-</code></pre><hr>
-<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
-
+        
+          <a class="article-more-a" href="/2018/05/16/侧滑控件/#more">more >></a>
+        
       
 
       
@@ -281,6 +199,138 @@ mDrawerLayout.addDrawerListener(drawerToggle);
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/16/侧滑控件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/动画/">动画</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/16/动画/" class="archive-article-date">
+  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>View 动画、帧动画、属性动画</p>
+<p>View 动画通过对场景里的对象不断的做图像变换(平移，缩放，旋转，透明度)而产生的动画效果，是一种渐进式动画，支持自定义</p>
+<p>帧动画是通过顺序播放一系列图像从而产生动画效果，即图片切换动画。</p>
+<p>属性动画就是通过动态地改变对象的属性从而达到动画效果</p>
+        
+          <a class="article-more-a" href="/2018/05/16/动画/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/16/动画/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-大型网站技术架构-核心原理与案例分析读书笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/">大型网站技术架构-核心原理与案例分析读书笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/" class="archive-article-date">
+  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>电子商务的市场背后一般都是不堪重负的网站架构，B2C网站每逢促销必宕机。</p>
+<p>如何打造一个高可用、高性能、易扩展、可伸缩且安全的网站？</p>
+        
+          <a class="article-more-a" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/">展开全文 >></a>
         </p>
       
 
@@ -426,6 +476,70 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 
 
   
+    <article id="post-Spring常用注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/Spring常用注解/">Spring 注解</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/16/Spring常用注解/" class="archive-article-date">
+  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常用-Spring-注解"><a href="#常用-Spring-注解" class="headerlink" title="常用 Spring 注解"></a>常用 Spring 注解</h3><p>@Component、@Repository、@Service、@Controller、@Resource、@Autowired、@Qualifier 这些都是项目上常用的注解，这些注解的使用大大简化 xml 文件的配置。</p>
+        
+          <a class="article-more-a" href="/2018/05/16/Spring常用注解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/16/Spring常用注解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-RectF" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -477,138 +591,6 @@ mDrawerLayout.addDrawerListener(drawerToggle);
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/16/RectF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-大型网站技术架构-核心原理与案例分析读书笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/">大型网站技术架构-核心原理与案例分析读书笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>电子商务的市场背后一般都是不堪重负的网站架构，B2C网站每逢促销必宕机。</p>
-<p>如何打造一个高可用、高性能、易扩展、可伸缩且安全的网站？</p>
-        
-          <a class="article-more-a" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/动画/">动画</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/动画/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>View 动画、帧动画、属性动画</p>
-<p>View 动画通过对场景里的对象不断的做图像变换(平移，缩放，旋转，透明度)而产生的动画效果，是一种渐进式动画，支持自定义</p>
-<p>帧动画是通过顺序播放一系列图像从而产生动画效果，即图片切换动画。</p>
-<p>属性动画就是通过动态地改变对象的属性从而达到动画效果</p>
-        
-          <a class="article-more-a" href="/2018/05/16/动画/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/动画/">展开全文 >></a>
         </p>
       
 
@@ -929,11 +911,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
