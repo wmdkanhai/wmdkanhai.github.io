@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wmding.com">
-  <title>侧滑控件 | wmd的奋斗生活</title>
+  <title>Java虚拟机(一)运行时数据区域 | wmd的奋斗生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
-<meta name="keywords" content="Android">
+  <meta name="description" content="Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。">
+<meta name="keywords" content="Java Java虚拟机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="侧滑控件">
-<meta property="og:url" content="http://wmding.com/2018/05/16/侧滑控件/index.html">
+<meta property="og:title" content="Java虚拟机(一)运行时数据区域">
+<meta property="og:url" content="http://wmding.com/2019/05/28/Java虚拟机(一)运行时数据区域/index.html">
 <meta property="og:site_name" content="wmd的奋斗生活">
-<meta property="og:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
+<meta property="og:description" content="Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T15:21:51.764Z">
+<meta property="og:updated_time" content="2019-05-28T14:09:31.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="侧滑控件">
-<meta name="twitter:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
+<meta name="twitter:title" content="Java虚拟机(一)运行时数据区域">
+<meta name="twitter:description" content="Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。">
   
     <link rel="alternative" href="/atom.xml" title="wmd的奋斗生活" type="application/atom+xml">
   
@@ -147,20 +147,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-侧滑控件" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Java虚拟机(一)运行时数据区域" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      侧滑控件
+      Java虚拟机(一)运行时数据区域
     </h1>
   
 
         
-        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
+        <a href="/2019/05/28/Java虚拟机(一)运行时数据区域/" class="archive-article-date">
+  	<time datetime="2019-05-28T13:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
 </a>
         
       </header>
@@ -170,30 +170,39 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DrawerLayout</p>
-<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
-<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
+        <p>Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。</p>
 <a id="more"></a>
-<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
-<hr>
-<p>给侧滑页面添加内容 NavigationView</p>
-<p>NavigationView 的使用</p>
-<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
-<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
-<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
-<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
-<hr>
-<p>添加 ToolBar</p>
-<p>1、添加</p>
-<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
-</code></pre><p>2、和侧滑栏进行关联</p>
-<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-
-drawerToggle.syncState();
-
-mDrawerLayout.addDrawerListener(drawerToggle);
-</code></pre><hr>
-<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
+<h3 id="1、运行时数据区域"><a href="#1、运行时数据区域" class="headerlink" title="1、运行时数据区域"></a>1、运行时数据区域</h3><p>Java 虚拟机管理的内存包括以下几个运行时数据区域</p>
+<ul>
+<li>程序计数器</li>
+<li>Java 虚拟机栈</li>
+<li>本地方法栈</li>
+<li>Java 堆</li>
+<li>方法区</li>
+<li>运行时常量池</li>
+</ul>
+<p>–</p>
+<h4 id="1、程序计数器"><a href="#1、程序计数器" class="headerlink" title="1、程序计数器"></a>1、程序计数器</h4><p>一块比较小的内存空间，它可以看作是当前程序执行的字节码的行号指示器。字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令。</p>
+<p>每条线程都需要一个独立的程序计数器，各条线程计数器互不影响，独立存储，即该区域为线程私有的区域</p>
+<p>如果线程执行的是一个 Java 方法，这个计数器记录的是正在执行的虚拟机字节码指令的地址；如果线程执行的是一个 Native 方法，这个计数器值为空（Undefined）</p>
+<p>该内存区域是唯一一个在 Java 虚拟机规范中没有规定任何 OutOfMemoryError 的区域</p>
+<h4 id="2、Java-虚拟机栈"><a href="#2、Java-虚拟机栈" class="headerlink" title="2、Java 虚拟机栈"></a>2、Java 虚拟机栈</h4><p>线程私有的，它的生命周期和线程相同。</p>
+<p>虚拟机栈描述的是 Java 方法执行的内存模型：每个方法在执行的同时，都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。每个方法从调用直至执行完成的过程，就对应着一个栈帧在虚拟机栈中入栈到出栈的过程。</p>
+<p>局部变量表存放了编译期可知的各种基本数据类型、对象引用</p>
+<p>在该区域中定义了两种异常状况：如果线程请求的栈深度大于虚拟机所允许的深度，将抛出 StackOverflowError 异常；如果虚拟机栈在动态扩展中无法申请到足够的内存，就会抛出 OutOfMemoryError 异常。</p>
+<h4 id="3、本地方法栈"><a href="#3、本地方法栈" class="headerlink" title="3、本地方法栈"></a>3、本地方法栈</h4><p>本地方法栈和虚拟机栈发挥的作用是非常相似的，他们之间的区别是：虚拟机栈为虚拟机执行 Java 方法服务；而本地方法栈是为虚拟机使用到的 Native 方法服务的。</p>
+<p>在 Sun HotSpot 虚拟机中直接就把本地方法栈和虚拟机栈合二为一。</p>
+<p>本地方法栈中也定义了两种异常：StackOverflowError 和 OutOfMemoryError 异常。</p>
+<h4 id="4、Java-堆"><a href="#4、Java-堆" class="headerlink" title="4、Java 堆"></a>4、Java 堆</h4><p>Java 堆（Java Heap）是 Java 虚拟机所管理的内存中最大的一块。Java 堆是被所有的线程共享的一块内存区域，在虚拟机启动是创建。此区域的唯一目的就是存放对象实例（所有的对象实例以及数组都在堆上分配）</p>
+<p>Java 堆是垃圾收集器管理的主要区域，所以也被称为”GC堆“</p>
+<p>Java 堆可以处于物理上不连续的内存空间中，只需要逻辑上的连续就行。</p>
+<p>如果堆中没有内存完成实例分配，并且堆中也无法再扩展时，将会抛出 OutOfMemoryError 异常。</p>
+<h4 id="5、方法栈"><a href="#5、方法栈" class="headerlink" title="5、方法栈"></a>5、方法栈</h4><p>各个线程共享内存区域，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据</p>
+<p>如果方法区的内存空间不满足内存分配需求时，Java虚拟机会抛出OutOfMemoryError异常。</p>
+<h4 id="6、运行时常量池"><a href="#6、运行时常量池" class="headerlink" title="6、运行时常量池"></a>6、运行时常量池</h4><p>运行时常量池（Runtime Constant Pool）是方法区的一部分。</p>
+<p>Class文件不仅包含了类的版本、接口、字段和方法等信息，还包含了常量池，它用来存放编译时期生成的字面量和符号引用，这些内容会在类加载后存放在方法区的运行时常量池中。</p>
+<p>运行时常量池可以理解为是类或接口的常量池的运行时表现形式。</p>
+<p>当创建类或接口时，如果构造运行时常量池所需的内存超过了方法区所能提供的最大值，Java虚拟机会抛出OutOfMemoryError异常。</p>
 
       
 
@@ -233,7 +242,7 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java虚拟机</a>
         		</li>
       		
 		</ul>
@@ -289,7 +298,7 @@ mDrawerLayout.addDrawerListener(drawerToggle);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://wmding.com/2018/05/16/侧滑控件/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://wmding.com/2019/05/28/Java虚拟机(一)运行时数据区域/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +312,9 @@ mDrawerLayout.addDrawerListener(drawerToggle);
   
 <nav id="article-nav">
   
-    <a href="/2018/05/16/Spring常用注解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring 注解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/17/设计模式之单例模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设计模式之单例模式</div>
+    <a href="/2019/04/09/hexo命令笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo命令笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   

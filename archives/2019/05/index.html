@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wmding.com">
-  <title>侧滑控件 | wmd的奋斗生活</title>
+  <title>Archives: 2019/5 | wmd的奋斗生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
-<meta name="keywords" content="Android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="侧滑控件">
-<meta property="og:url" content="http://wmding.com/2018/05/16/侧滑控件/index.html">
+  <meta name="description" content="学习总结 思考感悟">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wmd的奋斗生活">
+<meta property="og:url" content="http://wmding.com/archives/2019/05/index.html">
 <meta property="og:site_name" content="wmd的奋斗生活">
-<meta property="og:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
+<meta property="og:description" content="学习总结 思考感悟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T15:21:51.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="侧滑控件">
-<meta name="twitter:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
+<meta name="twitter:title" content="wmd的奋斗生活">
+<meta name="twitter:description" content="学习总结 思考感悟">
   
     <link rel="alternative" href="/atom.xml" title="wmd的奋斗生活" type="application/atom+xml">
   
@@ -147,190 +145,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-侧滑控件" class="article article-type-post " itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      侧滑控件
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/05/28/Java虚拟机(一)运行时数据区域/" class="archive-article-date">
+  	<time datetime="2019-05-28T13:13:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-28</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/05/28/Java虚拟机(一)运行时数据区域/">Java虚拟机(一)运行时数据区域</a>
     </h1>
   
 
-        
-        <a href="/2018/05/16/侧滑控件/" class="archive-article-date">
-  	<time datetime="2018-05-16T13:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>DrawerLayout</p>
-<p>1、以 android.suport.v4.widget.DrawerLayout 为根控件</p>
-<p>2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）</p>
-<a id="more"></a>
-<p>3、设置侧滑事件：mDrawerLayout.setDrawerListener(DrawerLayout.DrawerListener)</p>
-<hr>
-<p>给侧滑页面添加内容 NavigationView</p>
-<p>NavigationView 的使用</p>
-<p>1、app:headerLayout=”@layout/header_layout” 表示引入一个头布局文件</p>
-<p>2、app:menu=”@menu/main” 表示引入一个 menu 作为下面的点击项</p>
-<p>3、获取头部 View headerView = navigationView.getHeaderView(0);</p>
-<p>4、item 点击navigationView.setNavigationItemSelectedListener()</p>
-<hr>
-<p>添加 ToolBar</p>
-<p>1、添加</p>
-<pre><code>mToolBar.inflateMenu(R.menu.toolbar_menu);
-</code></pre><p>2、和侧滑栏进行关联</p>
-<pre><code>ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-
-drawerToggle.syncState();
-
-mDrawerLayout.addDrawerListener(drawerToggle);
-</code></pre><hr>
-<p>TabLayout + ViewPager + Fragment 可滑动顶部菜单</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/image/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java虚拟机</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://wmding.com/2018/05/16/侧滑控件/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/05/16/Spring常用注解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring 注解
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/05/17/设计模式之单例模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设计模式之单例模式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -353,8 +221,8 @@ mDrawerLayout.addDrawerListener(drawerToggle);
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
