@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wmd的奋斗生活">
 <meta property="og:description" content="Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T14:09:31.735Z">
+<meta property="og:updated_time" content="2019-05-28T14:12:41.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java虚拟机(一)运行时数据区域">
 <meta name="twitter:description" content="Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分成不同的数据区域。各个区域有自己的用途，有自己的创建和销毁的时间，同时也有自己的生命周期。">
@@ -181,7 +181,7 @@
 <li>方法区</li>
 <li>运行时常量池</li>
 </ul>
-<p>–</p>
+<hr>
 <h4 id="1、程序计数器"><a href="#1、程序计数器" class="headerlink" title="1、程序计数器"></a>1、程序计数器</h4><p>一块比较小的内存空间，它可以看作是当前程序执行的字节码的行号指示器。字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令。</p>
 <p>每条线程都需要一个独立的程序计数器，各条线程计数器互不影响，独立存储，即该区域为线程私有的区域</p>
 <p>如果线程执行的是一个 Java 方法，这个计数器记录的是正在执行的虚拟机字节码指令的地址；如果线程执行的是一个 Native 方法，这个计数器值为空（Undefined）</p>
@@ -430,19 +430,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具使用</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
