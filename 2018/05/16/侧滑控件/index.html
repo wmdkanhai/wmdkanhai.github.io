@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wmd的奋斗生活">
 <meta property="og:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T15:21:51.764Z">
+<meta property="og:updated_time" content="2019-05-29T09:15:44.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="侧滑控件">
 <meta name="twitter:description" content="DrawerLayout 1、以 android.suport.v4.widget.DrawerLayout 为根控件 2、DrawerLayout 下包裹两个控件，分别是内容控件和侧滑控件，使用 start 和 end 来区分从哪边滑出。（android:layout_gravity=”start”）">
@@ -51,7 +51,7 @@
 			<img src="/image/icon.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">wmdkanhai</a></h1>
+		  <h1 class="header-author"><a href="/">wmding</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">趁着年轻，加油吧！</p>
@@ -103,7 +103,7 @@
 				<img src="/image/icon.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">wmdkanhai</h1>
+			  <h1 class="header-author js-header-author">wmding</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>趁着年轻，加油吧！<i class="icon icon-quo-right"></i></p>
@@ -166,7 +166,31 @@
       </header>
     
     <!-- 目录内容 -->
-		
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      		
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -303,18 +327,18 @@ mDrawerLayout.addDrawerListener(drawerToggle);
   
 <nav id="article-nav">
   
-    <a href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/16/动画/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          大型网站技术架构-核心原理与案例分析读书笔记
+          动画
         
       </div>
     </a>
   
   
-    <a href="/2018/05/16/RectF/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RectF</div>
+    <a href="/2018/05/16/大型网站技术架构-核心原理与案例分析读书笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大型网站技术架构-核心原理与案例分析读书笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -340,7 +364,7 @@ mDrawerLayout.addDrawerListener(drawerToggle);
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 wmdkanhai
+    		&copy; 2019 wmding
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -438,11 +462,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,11 +474,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
